@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Programa">
+  <ClassDiagramComponents>
+    <Class name="Jugador" package="" visibility="public" xPosition="147.0" yPosition="8.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="edad" type="int" visibility="private"/>
+        <Field name="posicion" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Equipo" package="" visibility="public" xPosition="665.0" yPosition="74.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="ciudadOrigen" type="String" visibility="private"/>
+        <Field name="nombreTecnico" type="String" visibility="private"/>
+        <Field name="nInscripcion" type="int" visibility="private"/>
+        <Field name="N_MAX_JUGADORES" type="int" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Campeonato" package="" visibility="public" xPosition="684.0" yPosition="385.0">
+      <Fields>
+        <Field name="N_MAX_EQUIPOS" type="int" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="participa" source="Campeonato" target="Equipo" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="inscribe" source="Equipo" target="Jugador" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
